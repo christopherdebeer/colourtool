@@ -1,5 +1,5 @@
 var colourtool = {
     init: function () {
-        alert("initiated colourTool bookmarklet...");
+        if (window.console) {console.log("ColourTool init...");}
     }
 }
