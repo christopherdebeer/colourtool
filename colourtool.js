@@ -3,7 +3,7 @@ var colourtool = {
         if (window.console) {console.log("ColourTool init...");}
         $("body").html("<div id='colourtool'><h1>ColourTool</h1></div>");
         $("link[type='text/css']").each( function(index,stylesheet){
-            if (window.console) {console.log(stylesheet.attr("href"));}
+            if (window.console) {console.log(stylesheet);}
             $("#colourtool").append("<p>link found.</p>");
         });
     }
