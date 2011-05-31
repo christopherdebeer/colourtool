@@ -88,6 +88,7 @@ var colourtool = {
     },
     RGBList: function (cssString) {
         var colour = cssString.match(colourtool.regexPatterns.rgbValues)
+        return colour
     },
     lumDiff: function (R1,G1,B1,R2,G2,B2) {
         var L1 = 0.2126 * Math.pow(R1/255, 2.2) +
