@@ -6,7 +6,7 @@ var colourtool = {
     regexPatterns: {
         test: /color:(.)+;/i,
         hex: /#([0-9abcdef]+?){3,6};/i,
-        rgb: /rgb\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}\)/i,
+        rgb: /rgb\([0-9]{1,3}\s?,\s?[0-9]{1,3}\s?,\s?[0-9]{1,3}\)/i,
         rgba: /rgba\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3},[0-9]{1,3}\)/i,
         font: /font-family:(.)+;/i
     },
