@@ -67,6 +67,11 @@ var colourtool = {
         
         // display output
         $("body").append("<div id='colourtool'><div id='overlay'></div><div id='inner'><h1>Colourtool</h1><div id='closeButton'><a href='#'>close</a></div></div></div>")
+        $("#colourtool #closeButton a").click( function(e) {
+            e.preventDefault()
+            $("#colourtool").remove()
+            return false
+        })
         $(colourtool.unique(colourtool.colours)).each( function(i,origColour) {
             var colour = colourtool.RGBList(origColour)
             var hex = colourtool.RGB2hex(colour[0],colour[1],colour[2])
@@ -75,6 +80,7 @@ var colourtool = {
             var foreColour = "#000";
             if (whiteDiff > blackDiff) {foreColour = "#fff"} else {foreColour = "#000"} 
             $("#colourtool #inner").append("<p class='colour' style='color: "+foreColour+"; background-color: "+origColour+"'>"+origColour+"<br />"+hex+"</p>")
+            
         })
     },
     RGBList: function (cssString) {
