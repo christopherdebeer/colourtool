@@ -73,7 +73,7 @@ var colourtool = {
             var blackDiff = colourtool.lumDiff(parseInt(colour[0]),parseInt(colour[1]),parseInt(colour[2]),0,0,0)
             var foreColour = "#000";
             if (whiteDiff > blackDiff) {foreColour = "#fff"} else {foreColour = "#000"} 
-            $("#colourtool #inner").append("<p class='colour' style='colour: "+foreColour+"; background-color: "+origColour+"'>"+origColour+"</p>")
+            $("#colourtool #inner").append("<p class='colour' style='color: "+foreColour+"; background-color: "+origColour+"'>"+origColour+"</p>")
         })
     },
     RGBList: function (cssString) {
