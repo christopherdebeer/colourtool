@@ -16,6 +16,17 @@ var colourtool = {
         colourtool.getColours()
         colourtool.outputColourTool()
     },
+    unique: function (arrayName) {
+        var newArray=new Array();
+        label:for(var i=0; i<arrayName.length;i++ ) {  
+            for(var j=0; j<newArray.length;j++ ) {
+                if(newArray[j]==arrayName[i]) 
+                continue label;
+            }
+            newArray[newArray.length] = arrayName[i];
+        }
+        return newArray;
+    }, 
     getStylesheets: function () {
         
         // get all stylesheets that dont belong to colourtool
@@ -66,7 +77,7 @@ var colourtool = {
         
         // display output
         $("body").append("<div id='colourtool'><div id='inner'><h1>Colourtool</h1></div></div>")
-        $(colourtool.colours).unique().each( function(i,colour) {
+        $(colourtool.unique(colourtool.colours)).each( function(i,colour) {
             $("#colourtool #inner").append("<p class='colour' style='background-color: "+colour+"'>"+colour+"</p>")
         })
     }
