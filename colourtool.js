@@ -49,6 +49,11 @@ var colourtool = {
         })
         var linkList = colourtool.unique(colourtool.stylesheets)
         colourtool.stylesheets = linkList
+        $(colourtool.stylesheets).each( function (index,stylesheet) {
+            $.get(stylesheet, function(data) {
+                colourtool.allrules.push(data)
+            })
+        })
         
     },
     getColours: function () {
