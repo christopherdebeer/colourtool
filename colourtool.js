@@ -116,7 +116,8 @@ var colourtool = {
             var hex = ""
             
             if (origColour[0] == "#") {
-                hex = origColour
+                if (hex.replace("#","").length == 3) {hex = colourtool.hexS2hexL(origColour)}
+                else hex = origColour
                 rgb = colourtool.hex2RGB(origColour)
             } else {
                 hex = colourtool.RGB2hex(colour[0],colour[1],colour[2])
