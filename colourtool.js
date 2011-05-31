@@ -14,6 +14,7 @@ var colourtool = {
         if (window.console) {console.log("Init colourTool...")}
         colourtool.getStylesheets()
         colourtool.getColours()
+        colourtool.outputColourTool()
     },
     getStylesheets: function () {
         
@@ -60,5 +61,10 @@ var colourtool = {
     getFonts: function () {
         
         // search allrules for fonts
+    },
+    outputColourTool: function () {
+        
+        // display output
+        $("body").append("<div id='colourtool'></div>")
     }
 }
