@@ -4,7 +4,7 @@ var colourtool = {
     colours: [],
     fonts: [],
     regexPatterns: {
-        hex: /#([0-9abcdef]+?){3,6}/i,
+        hex: /#([0-9abcdef]+?){3,6};/i,
         rgb: /rgb\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}\)/i,
         rgba: ""
     },
