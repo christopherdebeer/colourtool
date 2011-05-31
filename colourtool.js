@@ -12,7 +12,7 @@ var colourtool = {
         })
         $("style").each( function(index, styletag){
             if (window.console) {console.log("found style element : " + styletag)}
-            colourtool.stylesheets.push(styletag.innerHTML)
+            colourtool.styles.push(styletag.innerHTML)
         })
     }
 }
