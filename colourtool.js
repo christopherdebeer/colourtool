@@ -37,10 +37,10 @@ var colourtool = {
         // search allrules for colours
         $(colourtool.allrules).each( function(i,r){
             
-            // test
-            if (r.search(colourtool.regexPatterns.test) != -1) {
-                if (window.console) {console.log("Found " + r.match(colourtool.regexPatterns.test).length.toString() + " test(s): " + r.match(colourtool.regexPatterns.test))}
-            }
+            //// test
+            //if (r.search(colourtool.regexPatterns.test) != -1) {
+            //    if (window.console) {console.log("Found " + r.match(colourtool.regexPatterns.test).length.toString() + " test(s): " + r.match(colourtool.regexPatterns.test))}
+            //}
             
             // #hex
             if (r.search(colourtool.regexPatterns.hex) != -1) {
