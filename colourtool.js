@@ -63,6 +63,11 @@ var colourtool = {
                 
             })
         })
+        if (colourtool.stylesheets.length == 0) {
+            colourtool.getColours()
+            colourtool.getFonts()
+            colourtool.outputColours()
+        }
         
     },
     areLoaded: function (){
