@@ -8,7 +8,8 @@ var colourtool = {
         hex: /#([0-9abcdef]+?){3,6};/i,
         rgb: /rgb\([0-9]{1,3}\s?,\s?[0-9]{1,3}\s?,\s?[0-9]{1,3}\)/i,
         rgba: /rgba\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3},[0-9]{1,3}\)/i,
-        font: /font-family:(.)+;/i
+        font: /font-family:(.)+;/i,
+        rgbValues: /[0-9]{1,3}/i
     },
     init: function () {
         if (window.console) {console.log("Init colourTool...")}
@@ -78,7 +79,29 @@ var colourtool = {
         // display output
         $("body").append("<div id='colourtool'><div id='inner'><h1>Colourtool</h1></div></div>")
         $(colourtool.unique(colourtool.colours)).each( function(i,colour) {
-            $("#colourtool #inner").append("<p class='colour' style='background-color: "+colour+"'>"+colour+"</p>")
+            var whiteDiff = colourtool.lumDiff()
+            var blackDiff = colourtool.lumDiff()
+            var foreColour = "";
+            if (whiteDiff > blackDiff) {foreColour = "#fff"} else {foreColour = "#000"} 
+            $("#colourtool #inner").append("<p class='colour' style='colour: "+foreColour+"background-color: "+colour+"'>"+colour+"</p>")
         })
+    },
+    RGBList: function (cssString) {
+        var colour = cssString.match(colourtool.regexPatterns.rgbValues)
+    },
+    lumDiff: function (R1,G1,B1,R2,G2,B2) {
+        var L1 = 0.2126 * Math.pow(R1/255, 2.2) +
+              0.7152 * Math.pow(G1/255, 2.2) +
+              0.0722 * Math.pow(B1/255, 2.2)
+     
+        var L2 = 0.2126 * Math.pow(R2/255, 2.2) +
+              0.7152 * Math.pow(G2/255, 2.2) +
+              0.0722 * Math.pow(B2/255, 2.2)
+     
+        if(L1 > L2) {
+            return (L1+0.05) / (L2+0.05)
+        } else {
+            return (L2+0.05) / (L1+0.05)
+        }
     }
 }
