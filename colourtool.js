@@ -2,6 +2,7 @@ var colourtool = {
     version: "0.0.2",
     stylesheets: [],
     loadedStylesheets: 0,
+    loadErrors: [],
     allrules: [],
     colours: [],
     fonts: [],
@@ -60,6 +61,9 @@ var colourtool = {
                 url: stylesheet,
                 success: function (data) {
                     colourtool.allrules.push(data)
+                },
+                error: function () {
+                    colourtool.loadErrors.push(url)
                 },
                 complete: function (data) {
                     colourtool.loadedStylesheets += 1;
