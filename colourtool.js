@@ -129,7 +129,7 @@ var colourtool = {
             var foreColour = "#000000";
             if (whiteDiff > blackDiff) {foreColour = "#ffffff"} else {foreColour = "#000000"}
             
-            $("#colourtool #inner #colours").append("<p class='colour' style='color: "+foreColour+"; background-color: "+hex+"'>"+origColour+"<br />"+hex+"</p>") 
+            $("#colourtool #inner #colours").append("<p class='colour' style='color: "+foreColour+"; background-color: "+hex+"'>"+rgb+"<br />"+hex+"</p>") 
         })
     },
     RGBList: function (cssString) {
