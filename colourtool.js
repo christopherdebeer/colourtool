@@ -56,12 +56,14 @@ var colourtool = {
         var linkList = colourtool.unique(colourtool.stylesheets)
         colourtool.stylesheets = linkList
         $(colourtool.stylesheets).each( function (index,stylesheet) {
-            $.get(stylesheet, function(data) {
-                colourtool.allrules.push(data)
-                colourtool.loadedStylesheets += 1;
-                colourtool.areLoaded()
-                
-            })
+            $.ajax({
+                url: stylesheet,
+                complete: function (data) {
+                    colourtool.allrules.push(data)
+                    colourtool.loadedStylesheets += 1;
+                    colourtool.areLoaded()
+                }
+              });
         })
         if (colourtool.stylesheets.length == 0) {
             colourtool.getColours()
