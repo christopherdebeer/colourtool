@@ -86,7 +86,7 @@ var colourtool = {
             if (r.search(colourtool.regexPatterns.hex) != -1) {
                 var matches = r.match(colourtool.regexPatterns.hex)
                 $(matches).each( function(index,colour) {
-                    if (colour.replace("#","").length == 3) {colour = "#" + colourtool.hexS2hexL(colour).toString()}
+                    if (colour.replace("#","").replace(";","").length == 3) {colour = "#" + colourtool.hexS2hexL(colour).toString()}
                     colourtool.colours.push(colour.replace(";","").toLowerCase())
                 })
                 if (window.console) {console.log("Found " + matches.length.toString() + " hex colour(s): " + matches)}
