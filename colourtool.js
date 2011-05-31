@@ -57,14 +57,14 @@ var colourtool = {
             // #hex
             if (r.search(colourtool.regexPatterns.hex) != -1) {
                 var matches = r.match(colourtool.regexPatterns.hex)
-                $(matches).each( function(index,colour) {colourtool.colours.push(colour)})
+                $(matches).each( function(index,colour) {colourtool.colours.push(colour.replace(" ",""))})
                 //if (window.console) {console.log("Found " + matches.length.toString() + " hex colour(s): " + matches)}
             }
             
             // rgb()
             if (r.search(colourtool.regexPatterns.rgb) != -1) {
                 var matches = r.match(colourtool.regexPatterns.rgb)
-                $(matches).each( function(index,colour) {colourtool.colours.push(colour)})
+                $(matches).each( function(index,colour) {colourtool.colours.push(colour.replace(" ",""))})
                 //if (window.console) {console.log("Found " + matches.length.toString() + " rgb colour(s): " + matches)}
             }
         })
