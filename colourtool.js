@@ -1,4 +1,5 @@
 var colourtool = {
+    version: "0.0.2",
     stylesheets: [],
     allrules: [],
     colours: [],
@@ -66,7 +67,7 @@ var colourtool = {
     outputColourTool: function () {
         
         // display output
-        $("body").append("<div id='colourtool'><div id='overlay'></div><div id='inner'><h1>Colourtool</h1><div id='closeButton'><a href='#'>close</a></div><p>This tool lists all the colours mentioned within the stylesheets and style elements that are present on the current page. Its intended use is to facilitate checking of CSS for unintended colour variations.</p><p>All the code is available at <a href='https://github.com/christopherdebeer/colourtool'>GitHub</a>.</p></div></div>")
+        $("body").append("<div id='colourtool'><div id='overlay'></div><div id='inner'><h1>Colourtool</h1><div id='closeButton'><a href='#'>close</a></div><p>This tool lists all the colours mentioned within the stylesheets and style elements that are present on the current page. Its intended use is to facilitate checking of CSS for unintended colour variations/diplications.</p><p>All the code is available at <a href='https://github.com/christopherdebeer/colourtool'>GitHub</a>. Version: "+colourtool.version.toString()+".</p></div></div>")
         $("#colourtool #closeButton a").click( function(e) {
             e.preventDefault()
             $("#colourtool").remove()
