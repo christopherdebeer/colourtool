@@ -43,7 +43,13 @@ var colourtool = {
         })
         $("link[type='text/css'], link[rel='stylesheet']").each ( function(index,link) {
             if (window.console) {console.log("found stylesheet : " + link.href)}
+            if (link.href != "https://github.com/christopherdebeer/colourtool/raw/master/colourtool.css" ) {
+                colourtool.stylesheets.push(link.href)
+            }
         })
+        var linkList = colourtool.unique(colourtool.stylesheets)
+        colourtool.stylesheets = linkList
+        
     },
     getColours: function () {
         
