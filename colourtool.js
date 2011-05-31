@@ -39,17 +39,17 @@ var colourtool = {
             
             // test
             if (r.search(colourtool.regexPatterns.test) != -1) {
-                if (window.console) {console.log("Found something: " + r.match(colourtool.regexPatterns.test))}
+                if (window.console) {console.log("Found " + r.match(colourtool.regexPatterns.test).length.toString() + " test(s): " + r.match(colourtool.regexPatterns.test))}
             }
             
             // #hex
             if (r.search(colourtool.regexPatterns.hex) != -1) {
-                if (window.console) {console.log("Found a colour: " + r.match(colourtool.regexPatterns.hex))}
+                if (window.console) {console.log("Found " + r.match(colourtool.regexPatterns.hex).length.toString() + " hex colour(s): " + r.match(colourtool.regexPatterns.hex))}
             }
             
             // rgb()
             if (r.search(colourtool.regexPatterns.rgb) != -1) {
-                if (window.console) {console.log("Found a colour: " + r.match(colourtool.regexPatterns.rgb))}
+                if (window.console) {console.log("Found " + r.match(colourtool.regexPatterns.rgb).length.toString() + " rgb colour(s): " + r.match(colourtool.regexPatterns.rgb))}
             }
         })
     },
