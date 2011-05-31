@@ -18,7 +18,7 @@ var colourtool = {
         // get all stylesheets that dont belong to colourtool
         $(document.styleSheets).each( function(index, stylesheet) {
             if (window.console) {console.log("found stylesheet : " + stylesheet.href)}
-            if (stylesheet.href != "https://github.com/christopherdebeer/colourtool/raw/master/colourtool.css" && stylesheets.href) {
+            if (stylesheet.href && stylesheet.href != "https://github.com/christopherdebeer/colourtool/raw/master/colourtool.css" ) {
                 colourtool.stylesheets.push(stylesheet)
             }
         })
