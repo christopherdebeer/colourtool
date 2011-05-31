@@ -84,10 +84,13 @@ var colourtool = {
 
         var red = parseInt(r,10)
         var green = parseInt(g,10)
-        var blue = parseInt(b,10)
+        var blue = parseInt(b,10)        
         
-        var rgbNew = blue | (green << 8) | (red << 16)
-        return '#' + rgbNew.toString(16)
+        function hex(x) {
+            return ("0" + parseInt(x).toString(16)).slice(-2);
+        }
+        return "#" + hex(red) + hex(green) + hex(blue);
+
     },
     lumDiff: function (R1,G1,B1,R2,G2,B2) {
         var L1 = 0.2126 * Math.pow(R1/255, 2.2) +
