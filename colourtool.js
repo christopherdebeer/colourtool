@@ -109,7 +109,7 @@ var colourtool = {
         })
     },
     outputColours: function () {
-        
+        $("#colourtool #inner #colours").html("");
         $(colourtool.unique(colourtool.colours)).each( function(i,origColour) {
             var colour = colourtool.RGBList(origColour)
             var hex = colourtool.RGB2hex(colour[0],colour[1],colour[2])
