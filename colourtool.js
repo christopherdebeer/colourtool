@@ -66,7 +66,7 @@ var colourtool = {
     outputColourTool: function () {
         
         // display output
-        $("body").append("<div id='colourtool'><div id='inner'><h1>Colourtool</h1></div></div>")
+        $("body").append("<div id='colourtool'><div id='overlay'></div><div id='inner'><h1>Colourtool</h1></div></div>")
         $(colourtool.unique(colourtool.colours)).each( function(i,origColour) {
             var colour = colourtool.RGBList(origColour)
             var hex = colourtool.RGB2hex(colour[0],colour[1],colour[2])
