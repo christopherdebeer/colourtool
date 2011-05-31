@@ -36,11 +36,19 @@ html, body {
 }
 #colourtool p.colour {
     text-align: center;
-    width: 110px;
+    width: 150px;
     padding: 15px;
     float: left;
     margin:10px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+}
+#colourtool #closeButton {
+    width:50px;
+    position: absolute;
+    top:0;
+    right:0;
+    background-color:#fff;
+    color:#ff0000;
 }
