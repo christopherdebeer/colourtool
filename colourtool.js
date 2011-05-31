@@ -69,7 +69,7 @@ var colourtool = {
         if (colourtool.loadedStylesheets == colourtool.stylesheets.length) {
             colourtool.getColours()
             colourtool.getFonts()
-            colourtool.outputColours()
+            //colourtool.outputColours()
         }
     },
     getColours: function () {
@@ -117,8 +117,7 @@ var colourtool = {
             var blackDiff = colourtool.lumDiff(parseInt(colour[0],10),parseInt(colour[1],10),parseInt(colour[2],10),0,0,0)
             var foreColour = "#000";
             if (whiteDiff > blackDiff) {foreColour = "#fff"} else {foreColour = "#000"} 
-            $("#colourtool #inner #colours").append("<p class='colour' style='color: "+foreColour+"; background-color: "+origColour+"'>"+origColour+"<br />"+hex+"</p>")
-            
+            $("#colourtool #inner #colours").append("<p class='colour' style='color: "+foreColour+"; background-color: "+origColour+"'>"+origColour+"<br />"+hex+"</p>") 
         })
     },
     RGBList: function (cssString) {
