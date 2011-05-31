@@ -4,12 +4,12 @@ var colourtool = {
     colours: [],
     fonts: [],
     regexPatterns: {
-        test: /color:(.)+;/i,
-        hex: /#([0-9abcdef]+?){3,6};/i,
-        rgb: /rgb\([0-9]{1,3}\s?,\s?[0-9]{1,3}\s?,\s?[0-9]{1,3}\)/i,
-        rgba: /rgba\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3},[0-9]{1,3}\)/i,
-        font: /font-family:(.)+;/i,
-        rgbValues: /[0-9]{1,3}/i
+        test: /color:(.)+;/gi,
+        hex: /#([0-9abcdef]+?){3,6};/gi,
+        rgb: /rgb\([0-9]{1,3}\s?,\s?[0-9]{1,3}\s?,\s?[0-9]{1,3}\)/gi,
+        rgba: /rgba\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3},[0-9]{1,3}\)/gi,
+        font: /font-family:(.)+;/gi,
+        rgbValues: /[0-9]{1,3}/gi
     },
     init: function () {
         if (window.console) {console.log("Init colourTool...")}
@@ -17,17 +17,6 @@ var colourtool = {
         colourtool.getColours()
         colourtool.outputColourTool()
     },
-    unique: function (arrayName) {
-        var newArray=new Array();
-        label:for(var i=0; i<arrayName.length;i++ ) {  
-            for(var j=0; j<newArray.length;j++ ) {
-                if(newArray[j]==arrayName[i]) 
-                continue label;
-            }
-            newArray[newArray.length] = arrayName[i];
-        }
-        return newArray;
-    }, 
     getStylesheets: function () {
         
         // get all stylesheets that dont belong to colourtool
@@ -109,5 +98,16 @@ var colourtool = {
         } else {
             return (L2+0.05) / (L1+0.05)
         }
+    },
+    unique: function (arrayName) {
+        var newArray=new Array();
+        label:for(var i=0; i<arrayName.length;i++ ) {  
+            for(var j=0; j<newArray.length;j++ ) {
+                if(newArray[j]==arrayName[i]) 
+                continue label;
+            }
+            newArray[newArray.length] = arrayName[i];
+        }
+        return newArray;
     }
 }
