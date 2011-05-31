@@ -76,13 +76,7 @@ var colourtool = {
         })
     },
     RGBList: function (cssString) {
-        var colour = []
-        var matches = cssString.match(colourtool.regexPatterns.rgbValues)
-        console.log(matches)
-        $(matches).each( function (index, value) {
-            colour.push(value)
-        })
-        return colour
+        return cssString.match(colourtool.regexPatterns.rgbValues)
     },
     lumDiff: function (R1,G1,B1,R2,G2,B2) {
         var L1 = 0.2126 * Math.pow(R1/255, 2.2) +
