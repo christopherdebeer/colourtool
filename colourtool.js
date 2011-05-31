@@ -69,15 +69,20 @@ var colourtool = {
         $("body").append("<div id='colourtool'><div id='inner'><h1>Colourtool</h1></div></div>")
         $(colourtool.unique(colourtool.colours)).each( function(i,origColour) {
             var colour = colourtool.RGBList(origColour)
+            var hex = colourtool.RGB2hex(colour[0],colour[1],colour[2])
             var whiteDiff = colourtool.lumDiff(parseInt(colour[0]),parseInt(colour[1]),parseInt(colour[2]),255,255,255)
             var blackDiff = colourtool.lumDiff(parseInt(colour[0]),parseInt(colour[1]),parseInt(colour[2]),0,0,0)
             var foreColour = "#000";
             if (whiteDiff > blackDiff) {foreColour = "#fff"} else {foreColour = "#000"} 
-            $("#colourtool #inner").append("<p class='colour' style='color: "+foreColour+"; background-color: "+origColour+"'>"+origColour+"</p>")
+            $("#colourtool #inner").append("<p class='colour' style='color: "+foreColour+"; background-color: "+origColour+"'>"+origColour+"<br />"+hex+"</p>")
         })
     },
     RGBList: function (cssString) {
         return cssString.match(colourtool.regexPatterns.rgbValues)
+    },
+    RGB2hex: function (r,g,b) {
+      var decColor = r + 256 * g + 65536 * b;
+      return "#" + decColor.toString(16);
     },
     lumDiff: function (R1,G1,B1,R2,G2,B2) {
         var L1 = 0.2126 * Math.pow(R1/255, 2.2) +
