@@ -17,7 +17,7 @@ var colourtool = {
         if (window.console) {console.log("Init colourTool...")}
         
         // display modal
-        $("body").append("<div id='colourtool'><div id='overlay'></div><div id='inner'><h1>Colourtool</h1><div id='closeButton'><a href='#'>close</a></div><p>This tool lists all the colours mentioned within the stylesheets and style elements that are present on the current page. Its intended use is to facilitate checking of CSS for unintended colour variations/duplications.</p><p>All the code is available at <a href='https://github.com/christopherdebeer/colourtool'>GitHub</a>. Version: "+colourtool.version.toString()+".</p><div id='colours'>Loading stylesheets</div><div id='footer'>Created in 2011 by Christopher de Beer, based on the PHP script by Brian Coit, both of Line Digital.</div></div></div>")
+        $("body").append("<div id='colourtool'><div id='overlay'></div><div id='inner'><h1>Colourtool</h1><div id='closeButton'><a href='#'>close</a></div><p>This tool lists all the colours mentioned within the stylesheets and style elements that are present on the current page. Its intended use is to facilitate checking of CSS for unintended colour variations/duplications.</p><p>All the code is available at <a href='https://github.com/christopherdebeer/colourtool'>GitHub</a>. Version: "+colourtool.version.toString()+".</p><div id='colours'><p id='loading'>Loading stylesheets</p></div><div id='footer'>Created in 2011 by Christopher de Beer, based on the PHP script by Brian Coit, both of Line Digital.</div></div></div>")
         $("#colourtool #closeButton a").click( function(e) {
             e.preventDefault()
             $("#colourtool").remove()
@@ -69,7 +69,7 @@ var colourtool = {
         if (colourtool.loadedStylesheets == colourtool.stylesheets.length) {
             colourtool.getColours()
             colourtool.getFonts()
-            //colourtool.outputColours()
+            colourtool.outputColours()
         }
     },
     getColours: function () {
