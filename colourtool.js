@@ -84,7 +84,7 @@ var colourtool = {
         if (rgb.substr(0, 1) === '#') {
             return rgb;
         }
-        var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(rgb);
+        var digits = rgb.match(/(.*?)rgb\((\d+),\s?(\d+),\s?(\d+)\)/gi);
         
         var red = parseInt(digits[2],10);
         var green = parseInt(digits[3],10);
