@@ -64,6 +64,13 @@ html, body {
     color: #ff0000;
     text-decoration: none;
 }
+#colourtool #loading {
+    text-align: center;
+    font-size:2em;
+    margin:20px;
+    font-weight: bold;
+    font-style: italic;
+}
 #colourtool #footer {
     padding-top:30px;
     text-align: center;
