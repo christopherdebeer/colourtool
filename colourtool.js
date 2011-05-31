@@ -112,6 +112,7 @@ var colourtool = {
         $("#colourtool #inner #colours").html("");
         $(colourtool.unique(colourtool.colours)).each( function(i,origColour) {
             var colour = colourtool.RGBList(origColour)
+            if (window.console) {console.log("colour: " + colour)}
             var hex = colourtool.RGB2hex(colour[0],colour[1],colour[2])
             var whiteDiff = colourtool.lumDiff(parseInt(colour[0],10),parseInt(colour[1],10),parseInt(colour[2],10),255,255,255)
             var blackDiff = colourtool.lumDiff(parseInt(colour[0],10),parseInt(colour[1],10),parseInt(colour[2],10),0,0,0)
