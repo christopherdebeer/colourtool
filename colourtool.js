@@ -1,6 +1,7 @@
 var colourtool = {
     version: "0.0.2",
     stylesheets: [],
+    loadedStylesheets: 0,
     allrules: [],
     colours: [],
     fonts: [],
@@ -15,9 +16,6 @@ var colourtool = {
     init: function () {
         if (window.console) {console.log("Init colourTool...")}
         colourtool.getStylesheets()
-        colourtool.getColours()
-        colourtool.getFonts()
-        colourtool.outputColourTool()
     },
     getStylesheets: function () {
         
@@ -52,9 +50,19 @@ var colourtool = {
         $(colourtool.stylesheets).each( function (index,stylesheet) {
             $.get(stylesheet, function(data) {
                 colourtool.allrules.push(data)
+                colourtool.loadedStylesheets += 1;
+                colourtool.areLoaded()
+                
             })
         })
         
+    },
+    areLoaded: function (){
+        if (colourtool.loadedStylesheets == colourtool.stylesheets.length) {
+            colourtool.getColours()
+            colourtool.getFonts()
+            colourtool.outputColourTool()
+        }
     },
     getColours: function () {
         
