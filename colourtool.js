@@ -111,9 +111,10 @@ var colourtool = {
     outputColours: function () {
         $("#colourtool #inner #colours").html("");
         $(colourtool.unique(colourtool.colours)).each( function(i,origColour) {
-            if (origColour[0] == "#") {colour = colourtool.hex2RGB(origColour)} else {var colour = colourtool.RGBList(origColour)}
-            if (window.console) {console.log("origColour: "+ origColour + " colour: " + colour)}
+            var colour = []
             var hex = ""
+            if (origColour[0] == "#") {colour = colourtool.hex2RGB(origColour)} else {colour = colourtool.RGBList(origColour)}
+            if (window.console) {console.log("origColour: "+ origColour + " colour: " + colour)}
             if (origColour[0] == "#") {hex = origColour} else { hex = colourtool.RGB2hex(colour[0],colour[1],colour[2])}
             var whiteDiff = colourtool.lumDiff(parseInt(colour[0],10),parseInt(colour[1],10),parseInt(colour[2],10),255,255,255)
             var blackDiff = colourtool.lumDiff(parseInt(colour[0],10),parseInt(colour[1],10),parseInt(colour[2],10),0,0,0)
