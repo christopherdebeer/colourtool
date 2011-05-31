@@ -65,9 +65,9 @@ var colourtool = {
     outputColourTool: function () {
         
         // display output
-        $("body").append("<div id='colourtool'><h1>Colourtool</h1></div>")
+        $("body").append("<div id='colourtool'><div id='inner'><h1>Colourtool</h1></div></div>")
         $(colourtool.colours).each( function(i,colour) {
-            $("#colourtool").append("<p class='colour' style='color: "+colour+"'>"+colour+"</p>")
+            $("#colourtool").append("<p class='colour' style='background-color: "+colour+"'>"+colour+"</p>")
         })
     }
 }
