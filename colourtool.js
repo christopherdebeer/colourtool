@@ -19,6 +19,7 @@ var colourtool = {
     getStylesheets: function () {
         $(document.styleSheets).each( function(index, stylesheet) {
             if (window.console) {console.log("found stylesheet : " + stylesheet.href)}
+            colourtool.stylesheets.push(stylesheet)
         })
     }
 }
