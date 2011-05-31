@@ -69,7 +69,7 @@ var colourtool = {
         $("body").append("<div id='colourtool'><div id='inner'><h1>Colourtool</h1></div></div>")
         $(colourtool.unique(colourtool.colours)).each( function(i,origColour) {
             var colour = colourtool.RGBList(origColour)
-            var hex = colourtool.RGB2hex(origColour)
+            var hex = colourtool.RGB2hex(colour[0],colour[1],colour[2])
             var whiteDiff = colourtool.lumDiff(parseInt(colour[0],10),parseInt(colour[1],10),parseInt(colour[2],10),255,255,255)
             var blackDiff = colourtool.lumDiff(parseInt(colour[0],10),parseInt(colour[1],10),parseInt(colour[2],10),0,0,0)
             var foreColour = "#000";
@@ -80,18 +80,14 @@ var colourtool = {
     RGBList: function (cssString) {
         return cssString.match(colourtool.regexPatterns.rgbValues)
     },
-    RGB2hex: function (rgb) {
-        if (rgb.substr(0, 1) === '#') {
-            return rgb;
-        }
-        var digits = rgb.match(/(.*?)rgb\((\d+),\s?(\d+),\s?(\d+)\)/gi);
+    RGB2hex: function (r,g,b) {
+
+        var red = parseInt(r,10)
+        var green = parseInt(g,10)
+        var blue = parseInt(b,10)
         
-        var red = parseInt(digits[2],10);
-        var green = parseInt(digits[3],10);
-        var blue = parseInt(digits[4],10);
-        
-        var rgbNew = blue | (green << 8) | (red << 16);
-        return digits[1] + '#' + rgbNew.toString(16);
+        var rgbNew = blue | (green << 8) | (red << 16)
+        return '#' + rgbNew.toString(16)
     },
     lumDiff: function (R1,G1,B1,R2,G2,B2) {
         var L1 = 0.2126 * Math.pow(R1/255, 2.2) +
