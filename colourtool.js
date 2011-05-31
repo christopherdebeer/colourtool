@@ -67,13 +67,13 @@ var colourtool = {
         
         // display output
         $("body").append("<div id='colourtool'><div id='inner'><h1>Colourtool</h1></div></div>")
-        $(colourtool.unique(colourtool.colours)).each( function(i,colour) {
-            colour = colourtool.RGBList(colour)
+        $(colourtool.unique(colourtool.colours)).each( function(i,origColour) {
+            var colour = colourtool.RGBList(colour)
             var whiteDiff = colourtool.lumDiff(parseInt(colour[0]),parseInt(colour[1]),parseInt(colour[2]),255,255,255)
             var blackDiff = colourtool.lumDiff(parseInt(colour[0]),parseInt(colour[1]),parseInt(colour[2]),0,0,0)
             var foreColour = "#000";
             if (whiteDiff > blackDiff) {foreColour = "#fff"} else {foreColour = "#000"} 
-            $("#colourtool #inner").append("<p class='colour' style='colour: "+foreColour+"; background-color: "+colour+"'>"+colour+"</p>")
+            $("#colourtool #inner").append("<p class='colour' style='colour: "+foreColour+"; background-color: "+origColour+"'>"+origColour+"</p>")
         })
     },
     RGBList: function (cssString) {
