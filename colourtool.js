@@ -12,7 +12,7 @@ var colourtool = {
         })
         $("style").each( function(index, styletag){
             if (window.console) {console.log("found linked stylesheet : " + styletag)}
-            colourtool.stylesheets.push(styletag.html())
+            colourtool.stylesheets.push(styletag)
         })
     }
 }
