@@ -5,4 +5,6 @@
     background-color: #fff;
     opacity: 0.8;
     z-index: 99999;
+    top:0;
+    left:0;
 }
