@@ -11,8 +11,8 @@ var colourtool = {
             colourtool.stylesheets.push(stylesheet.attr("href"))
         })
         $("style").each( function(index, styletag){
-            if (window.console) {console.log("found linked stylesheet : " + styletag)}
-            colourtool.stylesheets.push(styletag)
+            if (window.console) {console.log("found style element : " + styletag)}
+            colourtool.stylesheets.push(styletag.innerHTML)
         })
     }
 }
