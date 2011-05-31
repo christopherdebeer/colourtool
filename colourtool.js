@@ -122,7 +122,7 @@ var colourtool = {
                 hex = colourtool.RGB2hex(colour[0],colour[1],colour[2])
                 rgb = colourtool.RGBList(origColour)
             }
-            if (window.console) {console.log("origColour: "+ origColour + " colour: " + colour)}
+            if (window.console) {console.log("Original Colour: "+ origColour + " rgb: " + rgb + "hex: " + hex)}
             
             var whiteDiff = colourtool.lumDiff(parseInt(rgb[0],10),parseInt(rgb[1],10),parseInt(rgb[2],10),255,255,255)
             var blackDiff = colourtool.lumDiff(parseInt(rgb[0],10),parseInt(rgb[1],10),parseInt(rgb[2],10),0,0,0)
