@@ -58,8 +58,10 @@ var colourtool = {
         $(colourtool.stylesheets).each( function (index,stylesheet) {
             $.ajax({
                 url: stylesheet,
-                complete: function (data) {
+                success: function (data) {
                     colourtool.allrules.push(data)
+                },
+                complete: function (data) {
                     colourtool.loadedStylesheets += 1;
                     colourtool.areLoaded()
                 }
