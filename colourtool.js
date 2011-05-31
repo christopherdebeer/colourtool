@@ -36,6 +36,8 @@ var colourtool = {
         $(colourtool.allrules).each( function(i,r){
             if (r.search(colourtool.regexPatterns.hex) != -1) {
                 if (window.console) {console.log("Found a colour")}
+            } else {
+                if (window.console) {console.log("Found NO colours")}
             }
         })
     },
