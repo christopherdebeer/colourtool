@@ -1,8 +1,10 @@
 var colourtool = {
     stylesheets: [],
+    allrules: [],
     colours: [],
     fonts: [],
-    init: function () {        
+    init: function () {
+        if (window.console) {console.log("Init colourTool...")}
         colourtool.getStylesheets()
         colourtool.getColours()
     },
@@ -16,6 +18,7 @@ var colourtool = {
         $(colourtool.stylesheets).each(function (i,s){
             $(colourtool.stylesheets[i].cssRules).each(function(x,r){
                 if (window.console) {console.log(colourtool.stylesheets[i].cssRules[x].cssText)}
+                colourtool.allrules.push(colourtool.stylesheets[i].cssRules[x].cssText)
             })
         })
     }   
