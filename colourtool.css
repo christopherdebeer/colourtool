@@ -12,7 +12,7 @@ html, body {
     left:0;
 }
 #colourtool #overlay {
-    position: fixed;
+    position: absolute;
     top:0;
     left:0;
     width:100%;
@@ -21,10 +21,14 @@ html, body {
     opacity: 0.7;
 }
 #colourtool #inner {
+    position: relative;
+    top:0;
+    left:0;
     background-color: #fff;
     width:800px;
     margin: 0 auto;
     overflow:auto;
+    z-index: 99999;
 }
 #colourtool p.colour {
     width: 110px;
