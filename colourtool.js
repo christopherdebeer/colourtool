@@ -128,19 +128,21 @@ var colourtool = {
         return cssString.match(colourtool.regexPatterns.rgbValues)
     },
     hex2RGB: function (hex) {
-      hex = hex.replace("#","")
-      var rgb = []
-      if (hex.length == 3) {}
-      else {
+        hex = hex.replace("#","")
+        var rgb = []
+        if (hex.length == 3) { hex = colourtool.hexS2hexL(hex)}
+        
         var r = parseInt(hex.substring(0,2),16)
         var g = parseInt(hex.substring(2,4),16)
         var b = parseInt(hex.substring(4,6),16)
         rgb.push(r,g,b)
+        
         return rgb
-      }
     },
     hexS2hexL: function (hex) {
-        
+        hex = hex.replace("#","");
+        var longhandHex = hex[0].toString + hex[0].toString + hex[1].toString + hex[1].toString + hex[2].toString + hex[2].toString
+        return longhandHex
     },
     RGB2hex: function (r,g,b) {
         
