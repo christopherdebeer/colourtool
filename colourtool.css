@@ -5,8 +5,9 @@ html, body {
 }
 #colourtool {
     
+    font-size: 12px;
     text-align: left;
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100%;
     z-index: 99999;
@@ -33,6 +34,9 @@ html, body {
     overflow:auto;
     z-index: 99999;
     margin-top:50px;
+}
+#colourtool h1 {
+    font-size: 3em;
 }
 #colourtool p.colour {
     text-align: center;
