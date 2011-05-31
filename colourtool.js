@@ -37,7 +37,7 @@ var colourtool = {
             if (r.search(colourtool.regexPatterns.hex) != -1) {
                 if (window.console) {console.log("Found a colour")}
             } else {
-                if (window.console) {console.log("Found NO colours")}
+                //if (window.console) {console.log("Found NO colours")}
             }
         })
     },
