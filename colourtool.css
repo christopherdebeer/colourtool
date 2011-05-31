@@ -21,6 +21,7 @@ html, body {
     opacity: 0.7;
 }
 #colourtool #inner {
+    padding:20px;
     position: relative;
     top:0;
     left:0;
@@ -29,6 +30,7 @@ html, body {
     margin: 0 auto;
     overflow:auto;
     z-index: 99999;
+    margin-top:50px;
 }
 #colourtool p.colour {
     width: 110px;
