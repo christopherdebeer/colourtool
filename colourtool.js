@@ -83,7 +83,7 @@ var colourtool = {
             $("#colourtool #inner").append("<p class='colour' style='color: "+foreColour+"; background-color: "+origColour+"'>"+origColour+"<br />"+hex+"</p>")
             
         })
-        $("#colourtool #inner").append("<div id='footer'>Created by Christopher de Beer, based on the PHP script by Brian Coit.</div>")
+        $("#colourtool #inner").append("<div id='footer'>Created in 2011 by Christopher de Beer, based on the PHP script by Brian Coit, both from Line Digital.</div>")
     },
     RGBList: function (cssString) {
         
