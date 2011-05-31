@@ -6,7 +6,7 @@ html, body {
 #colourtool {
     
     text-align: left;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     z-index: 99999;
@@ -14,7 +14,7 @@ html, body {
     left:0;
 }
 #colourtool #overlay {
-    position: absolute;
+    position: fixed;
     top:0;
     left:0;
     width:100%;
