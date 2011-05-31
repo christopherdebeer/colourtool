@@ -44,12 +44,16 @@ var colourtool = {
             
             // #hex
             if (r.search(colourtool.regexPatterns.hex) != -1) {
-                if (window.console) {console.log("Found " + r.match(colourtool.regexPatterns.hex).length.toString() + " hex colour(s): " + r.match(colourtool.regexPatterns.hex))}
+                var matches = r.match(colourtool.regexPatterns.hex)
+                $(matches).each( function(index,colour) {colourtool.colours.push(colour)})
+                if (window.console) {console.log("Found " + matches.length.toString() + " hex colour(s): " + matches)}
             }
             
             // rgb()
             if (r.search(colourtool.regexPatterns.rgb) != -1) {
-                if (window.console) {console.log("Found " + r.match(colourtool.regexPatterns.rgb).length.toString() + " rgb colour(s): " + r.match(colourtool.regexPatterns.rgb))}
+                var matches = r.match(colourtool.regexPatterns.rgb)
+                $(matches).each( function(index,colour) {colourtool.colours.push(colour)})
+                if (window.console) {console.log("Found " + matches.length.toString() + " rgb colour(s): " + matches)}
             }
         })
     },
