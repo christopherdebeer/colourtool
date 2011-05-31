@@ -68,7 +68,7 @@ var colourtool = {
         // display output
         $("body").append("<div id='colourtool'><div id='inner'><h1>Colourtool</h1></div></div>")
         $(colourtool.unique(colourtool.colours)).each( function(i,origColour) {
-            var colour = colourtool.RGBList(colour)
+            var colour = colourtool.RGBList(origColour)
             var whiteDiff = colourtool.lumDiff(parseInt(colour[0]),parseInt(colour[1]),parseInt(colour[2]),255,255,255)
             var blackDiff = colourtool.lumDiff(parseInt(colour[0]),parseInt(colour[1]),parseInt(colour[2]),0,0,0)
             var foreColour = "#000";
