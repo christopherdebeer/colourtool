@@ -4,9 +4,11 @@ var colourtool = {
     colours: [],
     fonts: [],
     regexPatterns: {
+        test: /color:(.)+;/i,
         hex: /#([0-9abcdef]+?){3,6};/i,
         rgb: /rgb\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}\)/i,
-        rgba: ""
+        rgba: /rgba\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3},[0-9]{1,3}\)/i,
+        font: /font-family:(.)+;/i
     },
     init: function () {
         if (window.console) {console.log("Init colourTool...")}
@@ -34,6 +36,11 @@ var colourtool = {
         
         // search allrules for colours
         $(colourtool.allrules).each( function(i,r){
+            
+            // test
+            if (r.search(colourtool.regexPatterns.test) != -1) {
+                if (window.console) {console.log("Found something: " + r.match(colourtool.regexPatterns.test))}
+            }
             
             // #hex
             if (r.search(colourtool.regexPatterns.hex) != -1) {
