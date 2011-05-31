@@ -154,7 +154,7 @@ var colourtool = {
     },
     hexS2hexL: function (hex) {
         hex = hex.replace("#","");
-        var longhandHex = "#" + hex[0].toString() + hex[0].toString() + hex[1].toString() + hex[1].toString() + hex[2].toString() + hex[2].toString()
+        var longhandHex = hex[0].toString() + hex[0].toString() + hex[1].toString() + hex[1].toString() + hex[2].toString() + hex[2].toString()
         return longhandHex
     },
     RGB2hex: function (r,g,b) {
