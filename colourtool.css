@@ -23,4 +23,7 @@ html, body {
     padding: 15px;
     float: left;
     margin:10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }

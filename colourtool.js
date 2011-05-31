@@ -78,10 +78,13 @@ var colourtool = {
         })
     },
     RGBList: function (cssString) {
+        
+        // convert an rgb string to an array/list of vlaues ie: rgb(255,0,10) = [255,0,10]
         return cssString.match(colourtool.regexPatterns.rgbValues)
     },
     RGB2hex: function (r,g,b) {
-
+        
+        // convert rgb values to an html Hex value ie: [255,0,0] = #ff0000
         var red = parseInt(r,10)
         var green = parseInt(g,10)
         var blue = parseInt(b,10)        
@@ -93,6 +96,8 @@ var colourtool = {
 
     },
     lumDiff: function (R1,G1,B1,R2,G2,B2) {
+        
+        // return the luminocity difference between 2 rgb values
         var L1 = 0.2126 * Math.pow(R1/255, 2.2) +
               0.7152 * Math.pow(G1/255, 2.2) +
               0.0722 * Math.pow(B1/255, 2.2)
@@ -108,6 +113,8 @@ var colourtool = {
         }
     },
     unique: function (arrayName) {
+        
+        // basic function for returning only unique values from an inputted array/list
         var newArray=new Array();
         label:for(var i=0; i<arrayName.length;i++ ) {  
             for(var j=0; j<newArray.length;j++ ) {
