@@ -89,6 +89,7 @@ var colourtool = {
     RGBList: function (cssString) {
         var colour = []
         var matches = cssString.match(colourtool.regexPatterns.rgbValues)
+        console.log(matches)
         $(matches).each( function (index, value) {
             colour.push(value)
         })
