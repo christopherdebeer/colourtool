@@ -16,6 +16,7 @@ var colourtool = {
         if (window.console) {console.log("Init colourTool...")}
         colourtool.getStylesheets()
         colourtool.getColours()
+        colourtool.getFonts()
         colourtool.outputColourTool()
     },
     getStylesheets: function () {
@@ -63,6 +64,13 @@ var colourtool = {
     getFonts: function () {
         
         // search allrules for fonts
+        $(colourtool.allrules).each( function(i,r){
+            if (r.search(colourtool.regexPatterns.font) != -1) {
+                var matches = r.match(colourtool.regexPatterns.font)
+                $(matches).each( function(index,font) {colourtool.fonts.push(font.replace(" ",""))})
+                //if (window.console) {console.log("Found " + matches.length.toString() + " hex colour(s): " + matches)}
+            }
+        }
     },
     outputColourTool: function () {
         
@@ -83,7 +91,7 @@ var colourtool = {
             $("#colourtool #inner").append("<p class='colour' style='color: "+foreColour+"; background-color: "+origColour+"'>"+origColour+"<br />"+hex+"</p>")
             
         })
-        $("#colourtool #inner").append("<div id='footer'>Created in 2011 by Christopher de Beer, based on the PHP script by Brian Coit, both from Line Digital.</div>")
+        $("#colourtool #inner").append("<div id='footer'>Created in 2011 by Christopher de Beer, based on the PHP script by Brian Coit, both of Line Digital.</div>")
     },
     RGBList: function (cssString) {
         
