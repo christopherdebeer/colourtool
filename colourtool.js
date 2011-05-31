@@ -85,7 +85,10 @@ var colourtool = {
             // #hex
             if (r.search(colourtool.regexPatterns.hex) != -1) {
                 var matches = r.match(colourtool.regexPatterns.hex)
-                $(matches).each( function(index,colour) {colourtool.colours.push(colour.replace(" ","").toLowerCase())})
+                $(matches).each( function(index,colour) {
+                    if (colour.replace("#","").length == 3) {colour = colourtool.hexS2hexL(colour)}
+                    colourtool.colours.push(colour.replace(" ","").toLowerCase())
+                })
                 //if (window.console) {console.log("Found " + matches.length.toString() + " hex colour(s): " + matches)}
             }
             
@@ -116,8 +119,7 @@ var colourtool = {
             var hex = ""
             
             if (origColour[0] == "#") {
-                if (hex.replace("#","").length == 3) {hex = colourtool.hexS2hexL(origColour)}
-                else hex = origColour
+                hex = origColour
                 rgb = colourtool.hex2RGB(origColour)
             } else {
                 hex = colourtool.RGB2hex(colour[0],colour[1],colour[2])
