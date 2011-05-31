@@ -37,6 +37,8 @@ html, body {
     margin-top:50px;
 }
 #colourtool h1 {
+    letter-spacing:0;
+    line-height:1.4em;
     font-size: 3em;
     font-weight: bold;
     margin: 10px 0 20px;
