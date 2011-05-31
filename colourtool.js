@@ -5,7 +5,7 @@ var colourtool = {
     fonts: [],
     regexPatterns: {
         hex: /#([0-9abcdef]+?){3,6}/i,
-        rgb: "",
+        rgb: /rgb\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3}\)/i,
         rgba: ""
     },
     init: function () {
@@ -34,10 +34,15 @@ var colourtool = {
         
         // search allrules for colours
         $(colourtool.allrules).each( function(i,r){
+            
+            // #hex
             if (r.search(colourtool.regexPatterns.hex) != -1) {
                 if (window.console) {console.log("Found a colour: " + r.match(colourtool.regexPatterns.hex))}
-            } else {
-                //if (window.console) {console.log("Found NO colours")}
+            }
+            
+            // rgb()
+            if (r.search(colourtool.regexPatterns.rgb) != -1) {
+                if (window.console) {console.log("Found a colour: " + r.match(colourtool.regexPatterns.rgb))}
             }
         })
     },
