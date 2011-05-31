@@ -18,7 +18,7 @@ var colourtool = {
         // get all the css rules from the stylesheets
         $(colourtool.stylesheets).each(function (i,s){
             $(colourtool.stylesheets[i].cssRules).each(function(x,r){
-                if (window.console) {console.log(colourtool.stylesheets[i].cssRules[x].cssText)}
+                //if (window.console) {console.log(colourtool.stylesheets[i].cssRules[x].cssText)}
                 colourtool.allrules.push(colourtool.stylesheets[i].cssRules[x].cssText)
             })
         })
