@@ -70,7 +70,7 @@ var colourtool = {
                 $(matches).each( function(index,font) {colourtool.fonts.push(font.replace(" ",""))})
                 //if (window.console) {console.log("Found " + matches.length.toString() + " hex colour(s): " + matches)}
             }
-        }
+        })
     },
     outputColourTool: function () {
         
