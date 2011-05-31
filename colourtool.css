@@ -45,10 +45,14 @@ html, body {
     border-radius: 5px;
 }
 #colourtool #closeButton {
-    width:50px;
     position: absolute;
     top:0;
     right:0;
-    background-color:#fff;
+    background-color:#ff0000;
     color:#ff0000;
+    padding:10px;
+}
+#colourtoool #closeButton a {
+    color:#fff;
+    text-decoration:none;
 }
