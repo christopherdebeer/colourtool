@@ -4,7 +4,7 @@ html, body {
     height:100%;
 }
 #colourtool {
-    
+    letter-spacing:0;
     font-family: Helvetica,Arial,sans-serif;
     font-size: 12px;
     text-align: left;
@@ -38,6 +38,8 @@ html, body {
 }
 #colourtool h1 {
     font-size: 3em;
+    font-weight: bold;
+    margin: 10px 0 20px;
 }
 #colourtool p.colour {
     text-align: center;
