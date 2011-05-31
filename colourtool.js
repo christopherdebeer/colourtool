@@ -89,7 +89,7 @@ var colourtool = {
                     if (colour.replace("#","").length == 3) {colour = "#" + colourtool.hexS2hexL(colour).toString()}
                     colourtool.colours.push(colour.replace(" ","").toLowerCase())
                 })
-                //if (window.console) {console.log("Found " + matches.length.toString() + " hex colour(s): " + matches)}
+                if (window.console) {console.log("Found " + matches.length.toString() + " hex colour(s): " + matches)}
             }
             
             // rgb()
