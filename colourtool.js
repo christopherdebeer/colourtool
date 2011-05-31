@@ -62,8 +62,8 @@ var colourtool = {
                 success: function (data) {
                     colourtool.allrules.push(data)
                 },
-                error: function () {
-                    colourtool.loadErrors.push(url)
+                error: function (data) {
+                    colourtool.loadErrors.push(data)
                 },
                 complete: function (data) {
                     colourtool.loadedStylesheets += 1;
