@@ -41,7 +41,7 @@ var colourtool = {
         $("style").each( function(index,style) {
             colourtool.allrules.push(style.innerHTML)
         })
-        $("link[type='text/css']").each ( function(index,link) {
+        $("link[type='text/css'], link[rel='stylesheet']").each ( function(index,link) {
             if (window.console) {console.log("found stylesheet : " + link.href)}
         })
     },
