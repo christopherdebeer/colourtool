@@ -82,30 +82,32 @@ var colourtool = {
     getColours: function () {
         
         // search allrules for colours
-        $(colourtool.allrules).each( function(i,r){
-            
-            //// test
-            //if (r.search(colourtool.regexPatterns.test) != -1) {
-            //    if (window.console) {console.log("Found " + r.match(colourtool.regexPatterns.test).length.toString() + " test(s): " + r.match(colourtool.regexPatterns.test))}
-            //}
-            
-            // #hex
-            if (r.search(colourtool.regexPatterns.hex) != -1) {
-                var matches = r.match(colourtool.regexPatterns.hex)
-                $(matches).each( function(index,colour) {
-                    if (colour.replace("#","").replace(";","").length == 3) {colour = "#" + colourtool.hexS2hexL(colour).toString()}
-                    colourtool.colours.push(colour.replace(";","").toLowerCase())
-                })
-                if (window.console) {console.log("Found " + matches.length.toString() + " hex colour(s): " + matches)}
-            }
-            
-            // rgb()
-            if (r.search(colourtool.regexPatterns.rgb) != -1) {
-                var matches = r.match(colourtool.regexPatterns.rgb)
-                $(matches).each( function(index,colour) {colourtool.colours.push(colour.replace(" ","").toLowerCase())})
-                //if (window.console) {console.log("Found " + matches.length.toString() + " rgb colour(s): " + matches)}
-            }
-        })
+        if (colourtool.allrules.length > 0) {
+            $(colourtool.allrules).each( function(i,r){
+                
+                //// test
+                //if (r.search(colourtool.regexPatterns.test) != -1) {
+                //    if (window.console) {console.log("Found " + r.match(colourtool.regexPatterns.test).length.toString() + " test(s): " + r.match(colourtool.regexPatterns.test))}
+                //}
+                
+                // #hex
+                if (r.search(colourtool.regexPatterns.hex) != -1) {
+                    var matches = r.match(colourtool.regexPatterns.hex)
+                    $(matches).each( function(index,colour) {
+                        if (colour.replace("#","").replace(";","").length == 3) {colour = "#" + colourtool.hexS2hexL(colour).toString()}
+                        colourtool.colours.push(colour.replace(";","").toLowerCase())
+                    })
+                    if (window.console) {console.log("Found " + matches.length.toString() + " hex colour(s): " + matches)}
+                }
+                
+                // rgb()
+                if (r.search(colourtool.regexPatterns.rgb) != -1) {
+                    var matches = r.match(colourtool.regexPatterns.rgb)
+                    $(matches).each( function(index,colour) {colourtool.colours.push(colour.replace(" ","").toLowerCase())})
+                    //if (window.console) {console.log("Found " + matches.length.toString() + " rgb colour(s): " + matches)}
+                }
+            })
+        }
     },
     getFonts: function () {
         
