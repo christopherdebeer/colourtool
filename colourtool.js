@@ -127,6 +127,21 @@ var colourtool = {
         // convert an rgb string to an array/list of vlaues ie: rgb(255,0,10) = [255,0,10]
         return cssString.match(colourtool.regexPatterns.rgbValues)
     },
+    hex2RGB: function (hex) {
+      hex = hex.replace("#","")
+      var rgb = []
+      if (hex.length == 3) {}
+      else {
+        var r = parseInt(hex.substring(0,2),16)
+        var g = parseInt(hex.substring(2,4),16)
+        var b = parseInt(hex.substring(4,6),16)
+        rgb.push(r,g,b)
+        return rgb
+      }
+    },
+    hexS2hexL: function (hex) {
+        
+    },
     RGB2hex: function (r,g,b) {
         
         // convert rgb values to an html Hex value ie: [255,0,0] = #ff0000
