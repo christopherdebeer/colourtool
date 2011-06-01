@@ -64,7 +64,7 @@ var colourtool = {
                 },
                 error: function (data) {
                     colourtool.loadErrors.push(stylesheet)
-                    $("#colourtool #errors").append("<p class='error'>A stylesheet failed to load, possibly due to cross-domain security restrictions.</p>");
+                    $("#colourtool #errors").append("<p class='error'>A stylesheet ("+stylesheet+") failed to load, possibly due to cross-domain security restrictions.</p>");
                 },
                 complete: function (data) {
                     colourtool.loadedStylesheets += 1;
