@@ -5,7 +5,7 @@ This tool lists all the colours mentioned within the stylesheets and style eleme
 
 ## Install
 
-To install this bookmarklet tooleither drag the following link to your bookmarks: <a href="javascript:(function(){window.colBase='https://github.com/christopherdebeer/colourtool/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=colBase+'coltool.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200">colourTool</a> , or create a bookmark with the code below as the link/location. Clicking on the bookmark will launch colourTool on whichever site/page you are on at the time.
+To install this bookmarklet tool, create a bookmark with the code below as the link/location. Clicking on the bookmark will launch colourTool on whichever site/page you are on at the time.
 
 `javascript:(function(){window.colBase='https://github.com/christopherdebeer/colourtool/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=colBase+'coltool.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200`
 
