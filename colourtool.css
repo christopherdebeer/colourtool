@@ -36,6 +36,9 @@ html, body {
     z-index: 99999;
     margin-top:50px;
 }
+#colourtool #colours {
+    margin:20px 0;
+}
 #colourtool h1 {
     letter-spacing:0;
     line-height:1.4em;
