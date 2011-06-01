@@ -71,6 +71,11 @@ html, body {
     font-weight: bold;
     font-style: italic;
 }
+#colourtoool #errors p.error {
+    padding:10px;
+    background-color: #ff0000;
+    color: #fff;
+}
 #colourtool #footer {
     padding-top:30px;
     text-align: center;
