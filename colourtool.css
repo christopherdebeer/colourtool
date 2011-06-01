@@ -72,6 +72,7 @@ html, body {
     font-style: italic;
 }
 #colourtool #errors .error {
+    clear: both;
     padding:10px;
     background-color: #ff0000;
     color: #fff;
