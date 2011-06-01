@@ -47,6 +47,7 @@ html, body {
     margin: 10px 0 20px;
 }
 #colourtool p.colour {
+    clear: none;
     text-align: center;
     width: 150px;
     padding: 15px;
