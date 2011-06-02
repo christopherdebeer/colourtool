@@ -26,6 +26,14 @@
     pre { background: #000; color: #fff; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
+    .hardBreak {
+      width: 700px;
+      white-space: pre-wrap; /* css-3 */
+      white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+      white-space: -pre-wrap; /* Opera 4-6 */
+      white-space: -o-pre-wrap; /* Opera 7 */
+      word-wrap: break-word; /* Internet Explorer 5.5+ */
+    }
   </style>
 </head>
 
@@ -50,9 +58,10 @@
 
     <p>This tool lists all the colours mentioned within the stylesheets and style elements that are present on the current page. Its intended use is to facilitate checking of CSS for unintended colour variations/duplications.</p><h2>Install</h2>
 <p>To install this bookmarklet tool, either drag the following link: <a href="javascript:(function(){window.colBase='https://github.com/christopherdebeer/colourtool/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=colBase+'coltool.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200">colourTool</a> to your bookmarks, or create a bookmark with the code below as the link/location. Clicking on the bookmark will launch colourTool on whichever site/page you are on at the time.</p>
-<p><pre style="word-wrap: break-word;">javascript:(function(){window.colBase='https://github.com/christopherdebeer/colourtool/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=colBase+'coltool.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200</pre></p>
+<p><pre class="hardBreak">javascript:(function(){window.colBase='https://github.com/christopherdebeer/colourtool/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=colBase+'coltool.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200</pre></p>
 <h2>Contributors</h2>
-<p>Christopher de Beer &amp; Brian Coit<br/><br/>      </p>
+<p>Christopher de Beer &amp; Brian Coit<br/>
+<br/>      </p>
 
 
     <h2>Download</h2>
