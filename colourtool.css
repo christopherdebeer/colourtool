@@ -82,6 +82,9 @@ html, body {
     color: #fff;
     font-weight: bold;
 }
+#colourtool #errors .error.resolved {
+    background-color: #009900;
+}
 #colourtool #footer {
     background: 0 none;
     border: 0 none;
