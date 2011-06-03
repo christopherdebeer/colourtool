@@ -83,7 +83,7 @@ var colourtool = {
                 },
                 error: function (data) {
                     colourtool.loadErrors.push(stylesheet)
-                    $("#colourtool #errors").append("<p class='error' data-url='"+stylesheet+"'>A stylesheet ("+stylesheet+") failed to load, possibly due to cross-domain security restrictions... trying a proxy.</p>");
+                    $("#colourtool #stylesheets .url:contains('"+stylesheet+"')").parent().fint(".status").text("Failed")
                     if (window.console) {console.log("x-domain loading issue, trying proxy for ("+stylesheet+")")}
                     colourtool.yqlLoad(stylesheet)
                 },
