@@ -93,7 +93,7 @@ var colourtool = {
     yqlRecieve: function (data) {
         if (window.console) {console.log("jsonp callback done...")}
         if (window.console) {console.log(data)}
-        colourtool.allrules.push(data.query.results.body.p)
+        if (data.query.count > 0) {colourtool.allrules.push(data.query.results.body.p)}
         colourtool.loadedStylesheets += 1;
         colourtool.areLoaded()
     },
