@@ -100,7 +100,7 @@ var colourtool = {
             // try remove the error notification
             var originalURL = data.query.diagnostics.url.content
             if (window.console) {console.log("Resolved x-domain issue with proxy for: "+originalURL+".")}
-            $('.error[data-url="'+originalURL+']"').append("RESOLVED WITH PROXY")
+            $(".error[data-url='"+originalURL+"']").append("RESOLVED WITH PROXY")
             
             
         }
