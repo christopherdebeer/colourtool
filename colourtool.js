@@ -87,22 +87,15 @@ var colourtool = {
         if (window.console) {console.log("YQL:" + yqlquery)}
         $.ajax({
             url: yqlquery,
-            dataType: "jsonp",
-            success: function (data) {
-                colourtool.allrules.push(data)
-                if (window.console) {console.log("tried to remove an error cus the proxy worked...")}
-                $(".error[data-url='"+url+"']").remove()
-            },
-            complete: function (data) {
-                if (window.console) {console.log("Completed ajax request for:" + url)}
-                colourtool.loadedStylesheets += 1;
-                colourtool.areLoaded()
-            }
+            dataType: "jsonp"
         })
     },
     yqlRecieve: function (data) {
         if (window.console) {console.log("jsonp callback done...")}
         if (window.console) {console.log(data)}
+        colourtool.allrules.push(data.query.results.body.p)
+        colourtool.loadedStylesheets += 1;
+        colourtool.areLoaded()
     },
     areLoaded: function (){
         if (colourtool.loadedStylesheets == colourtool.stylesheets.length) {
