@@ -84,7 +84,7 @@ var colourtool = {
                 },
                 error: function (data) {
                     colourtool.loadErrors.push(stylesheet)
-                    $("#colourtool #stylesheets .url:contains('"+stylesheet+"')").parent().find(".status").text("Failed : Trying proxy")
+                    $("#colourtool #stylesheets .url:contains('"+stylesheet+"')").parent().addClass("error").find(".status").text("Failed : Trying proxy")
                     if (window.console) {console.log("x-domain loading issue, trying proxy for ("+stylesheet+")")}
                     colourtool.yqlLoad(stylesheet)
                 },
