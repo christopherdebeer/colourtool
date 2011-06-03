@@ -78,6 +78,7 @@ var colourtool = {
             $.ajax({
                 url: stylesheet,
                 success: function (data) {
+                    $("#colourtool #stylesheets .url:contains('"+stylesheet+"')").parent().find(".status").text("Loaded")
                     colourtool.allrules.push(data)
                     colourtool.loadedStylesheets += 1
                 },
@@ -118,9 +119,11 @@ var colourtool = {
             // try remove the error notification
             var originalURL = data.query.diagnostics.url.content
             if (window.console) {console.log("Resolved x-domain issue with proxy for: "+originalURL+".")}
-            $(".error[data-url='"+originalURL+"']").html("Stylesheet error resolved with yql proxy for: " + originalURL).addClass("resolved")
+            $("#colourtool #stylesheets .url:contains('"+originalURL+"')").parent().find(".status").text("Loaded via Proxy")
             
             
+        } else {
+            $("#colourtool #stylesheets .url:contains('"+originalURL+"')").parent().find(".status").text("Failed : Failed proxy fallback")
         }
         colourtool.loadedStylesheets += 1;
         colourtool.areLoaded()
