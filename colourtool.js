@@ -83,7 +83,7 @@ var colourtool = {
                 },
                 error: function (data) {
                     colourtool.loadErrors.push(stylesheet)
-                    $("#colourtool #stylesheets .url:contains('"+stylesheet+"')").parent().fint(".status").text("Failed")
+                    $("#colourtool #stylesheets .url:contains('"+stylesheet+"')").parent().find(".status").text("Failed")
                     if (window.console) {console.log("x-domain loading issue, trying proxy for ("+stylesheet+")")}
                     colourtool.yqlLoad(stylesheet)
                 },
