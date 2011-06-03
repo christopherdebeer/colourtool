@@ -111,7 +111,7 @@ var colourtool = {
     },
     yqlRecieve: function (data) {
         
-        if (window.console) {console.log("Proxy:" + data)}
+        if (window.console) {console.log(data)}
         if (data.query.count > 0) {
             
             // push the poxied css to the all rules
