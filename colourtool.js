@@ -83,8 +83,8 @@ var colourtool = {
     },
     yqlLoad: function (url) {
         if (window.console) {console.log("trying YQL proxy for: " + url)}
-        if (window.console) {console.log("YQL:" + yqlquery)}
         var yqlquery = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22"+escape(url)+"%22&format=json&callback=?"
+        if (window.console) {console.log("YQL:" + yqlquery)}
         $.getJSON({
             url: yqlquery,
             success: function (data) {
