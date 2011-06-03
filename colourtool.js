@@ -61,13 +61,15 @@ var colourtool = {
                 url: stylesheet,
                 success: function (data) {
                     colourtool.allrules.push(data)
+                    colourtool.loadedStylesheets += 1;
                 },
                 error: function (data) {
                     colourtool.loadErrors.push(stylesheet)
-                    $("#colourtool #errors").append("<p class='error'>A stylesheet ("+stylesheet+") failed to load, possibly due to cross-domain security restrictions.</p>");
+                    $("#colourtool #errors").append("<p class='error' data-url='"+stylesheet+"'>A stylesheet ("+stylesheet+") failed to load, possibly due to cross-domain security restrictions... trying a proxy.</p>");
+                    if (window.console) {console.log("x-domain loading issue, trying proxy for ("+stylesheet+")")}
+                    colourtool.yqlLoad(stylesheet)
                 },
                 complete: function (data) {
-                    colourtool.loadedStylesheets += 1;
                     colourtool.areLoaded()
                 }
               });
@@ -77,6 +79,25 @@ var colourtool = {
             colourtool.getFonts()
             colourtool.outputColours()
         }
+        
+    },
+    yqlLoad: function (url) {
+        var yqlquery = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22"+url+"%22&format=json&callback=?"
+        $.getJSON({
+            url: yqlquery,
+            success: function (data) {
+                colourtool.allrules.push(data)
+                if (window.console) {console.log("tried to remove an error cus the proxy worked...")}
+                $(".error[data-url='"+data+"']").remove()
+            },
+            complete: function (data) {
+                colourtool.loadedStylesheets += 1;
+                colourtool.areLoaded()
+                
+            }
+        })
+    },
+    yqlRecieve: function () {
         
     },
     areLoaded: function (){
