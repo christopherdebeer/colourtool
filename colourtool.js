@@ -74,17 +74,17 @@ var colourtool = {
         var linkList = colourtool.unique(colourtool.stylesheets)
         colourtool.stylesheets = linkList
         $(colourtool.stylesheets).each( function (index,stylesheet) {
-            $("#colourtool #stylesheets").append("<p><span class='url'>"+stylesheet+"</span> : <span class='status'>Loading</span></p>")
+            $("#colourtool #stylesheets").append("<p class='stylesheet'><span class='url'>"+stylesheet+"</span> : <span class='status'>Loading</span></p>")
             $.ajax({
                 url: stylesheet,
                 success: function (data) {
-                    $("#colourtool #stylesheets .url:contains('"+stylesheet+"')").parent().find(".status").text("Loaded")
+                    $("#colourtool #stylesheets .url:contains('"+stylesheet+"')").parent().addClass("error").find(".status").text("Loaded")
                     colourtool.allrules.push(data)
                     colourtool.loadedStylesheets += 1
                 },
                 error: function (data) {
                     colourtool.loadErrors.push(stylesheet)
-                    $("#colourtool #stylesheets .url:contains('"+stylesheet+"')").parent().find(".status").text("Failed")
+                    $("#colourtool #stylesheets .url:contains('"+stylesheet+"')").parent().find(".status").text("Failed : Trying proxy")
                     if (window.console) {console.log("x-domain loading issue, trying proxy for ("+stylesheet+")")}
                     colourtool.yqlLoad(stylesheet)
                 },
@@ -119,11 +119,11 @@ var colourtool = {
             // try remove the error notification
             var originalURL = data.query.diagnostics.url.content
             if (window.console) {console.log("Resolved x-domain issue with proxy for: "+originalURL+".")}
-            $("#colourtool #stylesheets .url:contains('"+originalURL+"')").parent().find(".status").text("Loaded via Proxy")
+            $("#colourtool #stylesheets .url:contains('"+originalURL+"')").parent().addClass("resolved").find(".status").text("Loaded : Resolved via Proxy")
             
             
         } else {
-            $("#colourtool #stylesheets .url:contains('"+originalURL+"')").parent().find(".status").text("Failed : Failed proxy fallback")
+            $("#colourtool #stylesheets .url:contains('"+originalURL+"')").parent().addClass("failed").find(".status").text("Failed : Failed proxy fallback")
         }
         colourtool.loadedStylesheets += 1;
         colourtool.areLoaded()
