@@ -83,7 +83,7 @@ var colourtool = {
     },
     yqlLoad: function (url) {
         if (window.console) {console.log("trying YQL proxy for: " + url)}
-        var yqlquery = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22"+escape(url)+"%22&format=json&callback=colourtool.yqlRecieve"
+        var yqlquery = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22"+escape(url)+"%22&format=json&diagnostics=true&callback=colourtool.yqlRecieve"
         if (window.console) {console.log("YQL:" + yqlquery)}
         $.ajax({
             url: yqlquery,
@@ -93,7 +93,16 @@ var colourtool = {
     yqlRecieve: function (data) {
         if (window.console) {console.log("jsonp callback done...")}
         if (window.console) {console.log(data)}
-        if (data.query.count > 0) {colourtool.allrules.push(data.query.results.body.p)}
+        if (data.query.count > 0) {
+            
+            // push the poxied css to the all rules
+            colourtool.allrules.push(data.query.results.body.p)
+            // try remove the error notification
+            var originalURL = data.query.diagnostics.url.content
+            $('.error[data-url="'+originalURL+'"').append("RESOLVED WITH PROXY");
+            
+            
+        }
         colourtool.loadedStylesheets += 1;
         colourtool.areLoaded()
     },
