@@ -98,8 +98,8 @@ var colourtool = {
             // push the poxied css to the all rules
             colourtool.allrules.push(data.query.results.body.p)
             // try remove the error notification
-            if (window.console) {console.log("Resolved x-domain issue with proxy for: "+originalURL+".")}
             var originalURL = data.query.diagnostics.url.content
+            if (window.console) {console.log("Resolved x-domain issue with proxy for: "+originalURL+".")}
             $('.error[data-url="'+originalURL+'"').append("RESOLVED WITH PROXY");
             
             
