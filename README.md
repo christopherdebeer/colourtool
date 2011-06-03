@@ -1,4 +1,4 @@
-Colourtool bookmarklet YQL Branch
+Colourtool bookmarklet
 ======================
 
 This tool lists all the colours mentioned within the stylesheets and style elements that are present on the current page. Its intended use is to facilitate checking of CSS for unintended colour variations/duplications.
