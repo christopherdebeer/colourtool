@@ -83,25 +83,26 @@ var colourtool = {
     },
     yqlLoad: function (url) {
         if (window.console) {console.log("trying YQL proxy for: " + url)}
-        var yqlquery = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22"+escape(url)+"%22&format=json&callback=?"
+        var yqlquery = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22"+escape(url)+"%22&format=json&callback=yqlRecieve"
         if (window.console) {console.log("YQL:" + yqlquery)}
-        $.getJSON({
+        $.ajax({
             url: yqlquery,
+            dataType: "jsonp",
             success: function (data) {
                 colourtool.allrules.push(data)
                 if (window.console) {console.log("tried to remove an error cus the proxy worked...")}
-                $(".error[data-url='"+data+"']").remove()
+                $(".error[data-url='"+url+"']").remove()
             },
             complete: function (data) {
-                if (window.console) {console.log("Completed ajax request for:" + yqlquery)}
+                if (window.console) {console.log("Completed ajax request for:" + url)}
                 colourtool.loadedStylesheets += 1;
                 colourtool.areLoaded()
-                
             }
         })
     },
-    yqlRecieve: function () {
-        
+    yqlRecieve: function (data) {
+        if (window.console) {console.log("jsonp callback done...")}
+        if (window.console) {console.log(data)}
     },
     areLoaded: function (){
         if (colourtool.loadedStylesheets == colourtool.stylesheets.length) {
