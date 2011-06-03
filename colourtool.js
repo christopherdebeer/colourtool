@@ -91,13 +91,14 @@ var colourtool = {
         })
     },
     yqlRecieve: function (data) {
-        if (window.console) {console.log("jsonp callback done...")}
-        if (window.console) {console.log(data)}
+        
+        if (window.console) {console.log("Proxy:" + data)}
         if (data.query.count > 0) {
             
             // push the poxied css to the all rules
             colourtool.allrules.push(data.query.results.body.p)
             // try remove the error notification
+            if (window.console) {console.log("Resolved x-domain issue with proxy for: "+originalURL+".")}
             var originalURL = data.query.diagnostics.url.content
             $('.error[data-url="'+originalURL+'"').append("RESOLVED WITH PROXY");
             
