@@ -10,9 +10,7 @@ To install this bookmarklet tool, create a bookmark with the code below as the l
 `javascript:(function(){window.colBase='https://github.com/christopherdebeer/colourtool/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=colBase+'coltool.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200`
 
 
-## Issues
-
-<strike>Being javascript, you may run into cross-domain issues, if a stylesheet resides on a domain other than the one you run the bookmarklet on. Currently if a stylesheet fails to load for either this or any other reason, then it is just skipped.</strike>
+## x-domain Issues/Resolution
 
 The bookmarklet now, when encountering a stylsheet/asset that is unreahable (due to cross-domain security restrictions), attempts to resolve it by querying yahoo via YQL.  
 
