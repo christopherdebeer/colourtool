@@ -92,6 +92,7 @@ var colourtool = {
                 $(".error[data-url='"+data+"']").remove()
             },
             complete: function (data) {
+                if (window.console) {console.log("Completed ajax request for:" + yqlquery)}
                 colourtool.loadedStylesheets += 1;
                 colourtool.areLoaded()
                 
