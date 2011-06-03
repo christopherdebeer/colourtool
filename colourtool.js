@@ -27,6 +27,7 @@ var colourtool = {
                    <p>This tool lists all the colours mentioned within the stylesheets and style elements that are present on the current page. Its intended use is to facilitate checking of CSS for unintended colour variations/duplications.</p> \
                    <p>All the code is available at <a href='https://github.com/christopherdebeer/colourtool'>GitHub</a>. Version: "+colourtool.version.toString()+".</p> \
                     <div id='output'> \
+                        <div id='stylesheets'></div> \
                         <div id='colours'> \
                             <p id='loading'>Loading stylesheets</p> \
                         </div> \
@@ -73,11 +74,12 @@ var colourtool = {
         var linkList = colourtool.unique(colourtool.stylesheets)
         colourtool.stylesheets = linkList
         $(colourtool.stylesheets).each( function (index,stylesheet) {
+            $("#colourtool #stylesheets").append("<p><span class='url'>"+stylesheet+"</span> : <span class='status'>Loading</span></p>")
             $.ajax({
                 url: stylesheet,
                 success: function (data) {
                     colourtool.allrules.push(data)
-                    colourtool.loadedStylesheets += 1;
+                    colourtool.loadedStylesheets += 1
                 },
                 error: function (data) {
                     colourtool.loadErrors.push(stylesheet)
