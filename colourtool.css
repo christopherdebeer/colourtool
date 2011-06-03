@@ -14,6 +14,7 @@ html, body {
     z-index: 99999;
     top:0;
     left:0;
+    color: #000;
 }
 #colourtool #overlay {
     position: fixed;
