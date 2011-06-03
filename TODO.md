@@ -1,7 +1,7 @@
 Things that need doing
 =========
 
-
-* make a todo list
-
+* Add font listing
+* Add colour info (originating stylesheet, use count etc)
+* Add stylesheet listing
 
